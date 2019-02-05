@@ -73,5 +73,6 @@ smith_df <- data.frame(pdf_smith) %>%
   mutate(text_sep = str_split(pdf_smith, "\\n")) %>%
   unnest(text_sep) %>%
   group_by(page) %>%
-  muate(line = 1:n())
+  muate(line = 1:n()) %>%
+  ungroup()
 
